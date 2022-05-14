@@ -8,7 +8,11 @@ import com.daecheve.core.mutant.service.MutantService;
  */
 public class MutantDelivery {
 
-    private MutantService mutantService = new MutantService();
+    private MutantService mutantService;
+
+    public MutantDelivery(MutantService mutantService) {
+        this.mutantService = mutantService;
+    }
 
     public Boolean isMutant(String[] dna) {
         return mutantService.isMutant(dna);
