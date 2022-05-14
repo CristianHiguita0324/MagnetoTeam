@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class MutantModel {
     
-    private int id;
+    private long id;
     private String dna;
     private byte isMutant;    
 }

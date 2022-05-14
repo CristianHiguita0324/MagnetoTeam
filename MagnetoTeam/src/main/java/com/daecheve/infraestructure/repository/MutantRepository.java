@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
  * @author daecheve
  */
 @Repository
-public interface MutantRepository extends CrudRepository<MutantEntity, Integer> {
+public interface MutantRepository extends CrudRepository<MutantEntity, Long> {
 
 }
