@@ -7,9 +7,9 @@ import lombok.Data;
  * @author daecheve
  */
 @Data
-public class MutantModel {
-    
+public class Mutant {
+
     private long id;
     private String dna;
-    private byte isMutant;    
+    private byte isMutant;
 }

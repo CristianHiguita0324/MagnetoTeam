@@ -1,8 +1,7 @@
 package com.daecheve.adapter.delivery;
 
-import com.daecheve.core.stats.model.StatsModel;
+import com.daecheve.core.stats.model.Stats;
 import com.daecheve.core.stats.service.StatsService;
-import java.util.List;
 
 /**
  *
@@ -16,7 +15,7 @@ public class StatsDelivery {
         this.statsService = statsService;
     }
 
-    public List<StatsModel> getStats() {
+    public Stats getStats() {
         return statsService.getStats();
     }
 }

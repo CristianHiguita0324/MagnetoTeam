@@ -1,9 +1,7 @@
 package com.daecheve.core.stats.service;
 
-import com.daecheve.core.mutant.model.MutantModel;
 import com.daecheve.core.mutant.service.MutantService;
-import com.daecheve.core.stats.model.StatsModel;
-import java.util.List;
+import com.daecheve.core.stats.model.Stats;
 
 /**
  *
@@ -17,8 +15,11 @@ public class StatsService {
         this.mutantService = mutantService;
     }
 
-    public List<StatsModel> getStats() {
-        List<MutantModel> listMutant = mutantService.findAllMutant();
-        return null;
+    public Stats getStats() {
+        Stats stats = new Stats();
+        stats.setCountMutantDna(mutantService.countByIsMutant(Byte.parseByte("1")));
+        stats.setCountHumanDna(mutantService.countByIsMutant(Byte.parseByte("0")));
+        stats.setRatio((double) stats.getCountMutantDna() / stats.getCountHumanDna());
+        return stats;
     }
 }

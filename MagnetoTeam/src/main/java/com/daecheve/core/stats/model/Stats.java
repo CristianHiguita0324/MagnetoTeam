@@ -7,9 +7,9 @@ import lombok.Data;
  * @author daecheve
  */
 @Data
-public class StatsModel {
+public class Stats {
 
     private long countMutantDna;
     private long countHumanDna;
-    private long ratio;
+    private double ratio;
 }

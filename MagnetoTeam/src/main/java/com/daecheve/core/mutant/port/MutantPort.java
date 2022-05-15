@@ -1,7 +1,6 @@
 package com.daecheve.core.mutant.port;
 
-import com.daecheve.core.mutant.model.MutantModel;
-import java.util.List;
+import com.daecheve.core.mutant.model.Mutant;
 
 /**
  *
@@ -9,7 +8,7 @@ import java.util.List;
  */
 public interface MutantPort {
 
-    public MutantModel save(MutantModel mutantModel);
+    public Mutant save(Mutant mutant);
 
-    public List<MutantModel> findAll();
+    public long countByIsMutant(byte isMutant);
 }
