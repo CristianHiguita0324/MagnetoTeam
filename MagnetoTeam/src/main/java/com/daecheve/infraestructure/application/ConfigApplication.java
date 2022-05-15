@@ -1,9 +1,11 @@
 package com.daecheve.infraestructure.application;
 
 import com.daecheve.adapter.delivery.MutantDelivery;
+import com.daecheve.adapter.delivery.StatsDelivery;
 import com.daecheve.adapter.repository_adapter.MutantRepositoryAdapter;
 import com.daecheve.core.mutant.port.MutantPort;
 import com.daecheve.core.mutant.service.MutantService;
+import com.daecheve.core.stats.service.StatsService;
 import com.daecheve.infraestructure.repository.MutantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -40,5 +42,15 @@ public class ConfigApplication {
     @Bean
     public MutantDelivery mutantDelivery() {
         return new MutantDelivery(mutantService());
+    }
+
+    @Bean
+    public StatsService statsService() {
+        return new StatsService(mutantService());
+    }
+
+    @Bean
+    public StatsDelivery statsDelivery() {
+        return new StatsDelivery(statsService());
     }
 }

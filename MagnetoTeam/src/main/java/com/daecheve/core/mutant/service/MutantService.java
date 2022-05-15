@@ -3,6 +3,7 @@ package com.daecheve.core.mutant.service;
 import com.daecheve.core.mutant.model.MutantModel;
 import com.daecheve.core.mutant.port.MutantPort;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -25,6 +26,10 @@ public class MutantService {
         mutantPort.save(mutantModel);
         
         return answer;
+    }
+    
+    public List<MutantModel> findAllMutant(){
+        return mutantPort.findAll();
     }
     
     private boolean matchDna(char[][] dna) {

@@ -4,6 +4,7 @@ import com.daecheve.core.mutant.model.MutantModel;
 import com.daecheve.core.mutant.port.MutantPort;
 import com.daecheve.infraestructure.repository.MutantRepository;
 import com.daecheve.infraestructure.repository.entity.MutantEntity;
+import java.util.List;
 
 /**
  *
@@ -22,13 +23,20 @@ public class MutantRepositoryAdapter implements MutantPort {
         MutantEntity mutantEntity = new MutantEntity();
         mutantEntity.setDna(mutantModel.getDna());
         mutantEntity.setIsMutant(mutantModel.getIsMutant());
-        
+
         MutantEntity mutantEntityAnswer = mutantRepository.save(mutantEntity);
         MutantModel mutantModelAnswer = new MutantModel();
         mutantModelAnswer.setId(mutantEntityAnswer.getId());
         mutantModelAnswer.setDna(mutantEntityAnswer.getDna());
         mutantModelAnswer.setIsMutant(mutantEntityAnswer.getIsMutant());
-        
+
         return mutantModelAnswer;
+    }
+
+    @Override
+    public List<MutantModel> findAll() {
+        Iterable<MutantEntity> itMutant = mutantRepository.findAll();
+        
+        return null;
     }
 }
