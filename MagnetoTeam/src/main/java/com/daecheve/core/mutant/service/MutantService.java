@@ -37,9 +37,9 @@ public class MutantService {
         for (int y = 0; y < dna.length; y++) {
             for (int x = 0; x < dna.length; x++) {
 
-                if (findAxisX(x, y, dna) || findAxisY(x, y, dna) || findAxisXY(x, y, dna)) {
-                    contMutant++;
-                }
+                contMutant = contMutant + findAxisX(x, y, dna);
+                contMutant = contMutant + findAxisY(x, y, dna);
+                contMutant = contMutant + findAxisXY(x, y, dna);
 
                 if (contMutant > 1) {
                     return true;
@@ -49,23 +49,29 @@ public class MutantService {
         return false;
     }
 
-    private boolean findAxisX(int x, int y, char[][] dna) {
-        return x < dna.length - 3 && Boolean.TRUE.equals(compareSequence(dna[y][x], dna[y][x + 1], dna[y][x + 2], dna[y][x + 3]));
+    private int findAxisX(int x, int y, char[][] dna) {
+        return x < dna.length - 3
+                && Boolean.TRUE.equals(compareSequence(dna[y][x], dna[y][x + 1],
+                        dna[y][x + 2], dna[y][x + 3])) ? 1 : 0;
     }
 
-    private boolean findAxisY(int x, int y, char[][] dna) {
-        return y < dna.length - 3 && Boolean.TRUE.equals(compareSequence(dna[y][x], dna[y + 1][x], dna[y + 2][x], dna[y + 3][x]));
+    private int findAxisY(int x, int y, char[][] dna) {
+        return y < dna.length - 3
+                && Boolean.TRUE.equals(compareSequence(dna[y][x], dna[y + 1][x],
+                        dna[y + 2][x], dna[y + 3][x])) ? 1 : 0;
     }
 
-    private boolean findAxisXY(int x, int y, char[][] dna) {
-        boolean answer = false;
+    private int findAxisXY(int x, int y, char[][] dna) {
+        int answer = 0;
         if (x < dna.length - 3 && y < dna.length - 3) {
-            if (Boolean.TRUE.equals(compareSequence(dna[y][x], dna[y + 1][x + 1], dna[y + 2][x + 2], dna[y + 3][x + 3]))) {
-                return true;
+            if (Boolean.TRUE.equals(compareSequence(dna[y][x],
+                    dna[y + 1][x + 1], dna[y + 2][x + 2], dna[y + 3][x + 3]))) {
+                answer++;
             }
 
-            if (Boolean.TRUE.equals(compareSequence(dna[y][5 - x], dna[y + 1][4 - x], dna[y + 2][3 - x], dna[y + 3][2 - x]))) {
-                return true;
+            if (Boolean.TRUE.equals(compareSequence(dna[y][5 - x],
+                    dna[y + 1][4 - x], dna[y + 2][3 - x], dna[y + 3][2 - x]))) {
+                answer++;
             }
         }
         return answer;
