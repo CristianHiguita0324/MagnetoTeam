@@ -8,18 +8,21 @@ import com.daecheve.core.stats.model.Stats;
  * @author daecheve
  */
 public class StatsService {
-
+    
     private MutantService mutantService;
-
+    
     public StatsService(MutantService mutantService) {
         this.mutantService = mutantService;
     }
-
+    
     public Stats getStats() {
         Stats stats = new Stats();
         stats.setCountMutantDna(mutantService.countByIsMutant(Byte.parseByte("1")));
         stats.setCountHumanDna(mutantService.countByIsMutant(Byte.parseByte("0")));
-        stats.setRatio((double) stats.getCountMutantDna() / stats.getCountHumanDna());
+        stats.setRatio(0);
+        if (stats.getCountMutantDna() > 0 && stats.getCountHumanDna() > 0) {
+            stats.setRatio((double) stats.getCountMutantDna() / stats.getCountHumanDna());
+        }
         return stats;
     }
 }
