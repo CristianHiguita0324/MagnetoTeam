@@ -1,14 +1,22 @@
 package com.daecheve.core.mutant.service;
 
+import com.daecheve.core.exception.DnaCompositionException;
+import com.daecheve.core.exception.DnaMatrixSizeException;
 import com.daecheve.core.mutant.model.Mutant;
 import com.daecheve.core.mutant.port.MutantPort;
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author daecheve
  */
 public class MutantService {
+
+    Logger logger = LoggerFactory.getLogger(MutantService.class);
 
     private MutantPort mutantPort;
 
@@ -17,14 +25,21 @@ public class MutantService {
     }
 
     public Boolean isMutant(String[] dna) {
-        boolean answer = matchDna(parseArrayToMatrix(dna));
+        try {
+            checkDnaComposition(dna);
+            checkDnaMatrixSize(dna);
 
-        Mutant mutant = new Mutant();
-        mutant.setDna(Arrays.toString(dna));
-        mutant.setIsMutant(Byte.parseByte(answer ? "1" : "0"));
-        mutantPort.save(mutant);
+            boolean answer = matchDna(parseArrayToMatrix(dna));
+            Mutant mutant = new Mutant();
+            mutant.setDna(Arrays.toString(dna));
+            mutant.setIsMutant(Byte.parseByte(answer ? "1" : "0"));
+            mutantPort.save(mutant);
 
-        return answer;
+            return answer;
+        } catch (Exception e) {
+            logger.error(e.toString());
+            return false;
+        }
     }
 
     public long countByIsMutant(byte isMutant) {
@@ -89,5 +104,29 @@ public class MutantService {
             cont++;
         }
         return matRet;
+    }
+
+    private void checkDnaComposition(String[] dna) throws DnaCompositionException {
+        if (dna.length > 0) {
+            Pattern pat = Pattern.compile("[ACGT]+");
+            for (String it : dna) {
+                Matcher mat = pat.matcher(it);
+                if (Boolean.FALSE.equals(mat.matches())) {
+                    throw new DnaCompositionException();
+                }
+            }
+        } else {
+            throw new DnaCompositionException();
+        }
+    }
+
+    private void checkDnaMatrixSize(String[] dna) throws DnaMatrixSizeException {
+        if (dna.length > 0) {
+            if (Boolean.FALSE.equals(dna.length == dna[0].length())) {
+                throw new DnaMatrixSizeException();
+            }
+        } else {
+            throw new DnaMatrixSizeException();
+        }
     }
 }
