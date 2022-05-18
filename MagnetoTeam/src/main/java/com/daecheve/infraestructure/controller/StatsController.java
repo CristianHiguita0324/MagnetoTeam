@@ -2,6 +2,7 @@ package com.daecheve.infraestructure.controller;
 
 import com.daecheve.adapter.delivery.StatsDelivery;
 import com.daecheve.core.stats.model.Stats;
+import io.swagger.v3.oas.annotations.Operation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,10 @@ public class StatsController {
     @Autowired
     StatsDelivery statsDelivery;
 
+    @Operation(summary = "Get all stats")
     @GetMapping(value = "/stats", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Stats> getStats() {
-        logger.info("Get all stats");
+        logger.info("Getting all stats");
         return new ResponseEntity<>(statsDelivery.getStats(), HttpStatus.OK);
     }
 }
