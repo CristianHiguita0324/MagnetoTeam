@@ -8,7 +8,7 @@ import com.daecheve.core.mutant.model.Mutant;
  */
 public interface MutantPort {
 
-    public Mutant save(Mutant mutant);
+    Mutant save(Mutant mutant);
 
-    public long countByIsMutant(byte isMutant);
+    long countByIsMutant(byte isMutant);
 }

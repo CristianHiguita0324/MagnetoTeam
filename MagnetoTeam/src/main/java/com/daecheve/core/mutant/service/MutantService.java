@@ -84,8 +84,10 @@ public class MutantService {
                 answer++;
             }
 
-            if (Boolean.TRUE.equals(compareSequence(dna[y][5 - x],
-                    dna[y + 1][4 - x], dna[y + 2][3 - x], dna[y + 3][2 - x]))) {
+            if (Boolean.TRUE.equals(compareSequence(dna[y][(dna.length - 1) - x],
+                    dna[y + 1][(dna.length - 2) - x],
+                    dna[y + 2][(dna.length - 3) - x],
+                    dna[y + 3][(dna.length - 4) - x]))) {
                 answer++;
             }
         }
