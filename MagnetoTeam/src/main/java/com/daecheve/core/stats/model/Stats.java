@@ -1,12 +1,14 @@
 package com.daecheve.core.stats.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
  * @author daecheve
  */
-@Data
+@Setter
+@Getter
 public class Stats {
 
     private long countMutantDna;

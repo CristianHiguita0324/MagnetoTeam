@@ -123,11 +123,7 @@ public class MutantService {
     }
 
     private void checkDnaMatrixSize(String[] dna) throws DnaMatrixSizeException {
-        if (dna.length > 0) {
-            if (Boolean.FALSE.equals(dna.length == dna[0].length())) {
-                throw new DnaMatrixSizeException();
-            }
-        } else {
+        if (Boolean.FALSE.equals(dna.length == dna[0].length())) {
             throw new DnaMatrixSizeException();
         }
     }

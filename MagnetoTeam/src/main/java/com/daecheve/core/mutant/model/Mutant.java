@@ -1,12 +1,12 @@
 package com.daecheve.core.mutant.model;
 
-import lombok.Data;
+import lombok.Setter;
 
 /**
  *
  * @author daecheve
  */
-@Data
+@Setter
 public class Mutant {
 
     private long id;
