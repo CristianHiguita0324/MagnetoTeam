@@ -27,7 +27,7 @@ public class StatsDeliveryTest {
     StatsService statsService;
 
     @Test
-    void shouldIsMutant() {
+    void shouldGetStats() {
         when(statsService.getStats()).thenReturn(new Stats());
 
         Stats res = statsDelivery.getStats();
