@@ -28,13 +28,7 @@ Desarrolla el algoritmo de la manera más eficiente posible.
 
 - Se puede usar el siguiente **CURL** para comprobar una cadena de ADN, ejemplo: 
 
-**curl -X 'POST' \
-  'http://184.73.16.225:8080/mutant' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '[
-  "ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"
-]'**
+**curl -X 'POST' 'http://184.73.16.225:8080/mutant' -H 'accept: application/json' -H 'Content-Type: application/json' -d '[ "CTGCGA","CCGTGC","TTCTGT","AGCAGG","CCCCTA","TCACTG" ]'**
 
 - Adicional se puede usar la documentación de Sprintdocs para consumir los servicios: http://184.73.16.225:8080/swagger-ui/index.html
 
@@ -48,9 +42,7 @@ Desarrolla el algoritmo de la manera más eficiente posible.
 
 - Se puede usar el siguiente **CURL** para obtener las estadisticas, ejemplo:
 
-**curl -X 'GET' \
-  'http://184.73.16.225:8080/stats' \
-  -H 'accept: application/json'**
+**curl -X 'GET' 'http://184.73.16.225:8080/stats' -H 'accept: application/json'**
 
 - Adicional se puede usar la documentación de Sprintdocs para consumir los servicios: http://184.73.16.225:8080/swagger-ui/index.html
 
