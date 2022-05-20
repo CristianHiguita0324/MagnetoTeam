@@ -79,7 +79,7 @@ Se usa Arquitectura Limpia para construir la aplicación, con el objetivo de des
 Se debe contar con una intalacion de la version 18 de OpenJDK o JAVA; Posterior a eso se debe clonar el proyecto de la rama main https://github.com/daecheve90/MagnetoTeam.git; Se debe ingresar a la raiz del proyecto y abrir una terminal.
 //IMAGEN RAIZ
 Y ejecutar el siguiente comando, para construir el .jar ejecutable y generar el reporte de pruebas unitarias.
-- En LINUX: JAVA_HOME=/usr/lib/jvm/default /usr/lib/netbeans/java/maven/bin/mvn clean install
+- En LINUX: JAVA_HOME=/usr/lib/jvm/default ../Maven/bin/mvn clean install
 - En WINDOWS: COMANDO WINDOWS
 
 ![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/compilation_root.png)
