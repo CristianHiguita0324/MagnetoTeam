@@ -24,26 +24,45 @@ Desarrolla el algoritmo de la manera más eficiente posible.
 
 **Nivel 1 y Nivel 2**
 
-- Endpoint **mutant** determina si una secuencia de ADN es mutante o humano: LINK ENDPOINT
+- Endpoint **mutant** determina si una secuencia de ADN es mutante o humano: http://184.73.16.225:8080/mutant
 
-- Se puede usar el siguiente **CURL** para comprobar una cadena de ADN, ejemplo: CURL
+- Se puede usar el siguiente **CURL** para comprobar una cadena de ADN, ejemplo: 
 
-- Adicional se puede usar la documentación de Sprintdocs para consumir los servicios: LINK SWAGGER
-//IMAGEN SWAGGER
+**curl -X 'POST' \
+  'http://184.73.16.225:8080/mutant' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '[
+  "ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"
+]'**
+
+- Adicional se puede usar la documentación de Sprintdocs para consumir los servicios: http://184.73.16.225:8080/swagger-ui/index.html
+//IMAGEN SWAGGERMUTANT
 
 ---
 
 **Nivel 3**
 
-- Endpoint **stats** obtiene las estadisticas de las verificaciones de ADN: LINK ENDPOINT
+- Endpoint **stats** obtiene las estadisticas de las verificaciones de ADN: http://184.73.16.225:8080/stats
 
-- Se puede usar el siguiente **CURL** para obtener las estadisticas, ejemplo: CURL
+- Se puede usar el siguiente **CURL** para obtener las estadisticas, ejemplo:
 
-- Adicional se puede usar la documentación de Sprintdocs para consumir los servicios: LINK SWAGGER
-//IMAGEN SWAGGER
+**curl -X 'GET' \
+  'http://184.73.16.225:8080/stats' \
+  -H 'accept: application/json'**
 
-- Endpoint de base de datos donde se puede consultar los registros guardados de las cadenas procesadas: LINK H2
-//IMAGEN H2
+- Adicional se puede usar la documentación de Sprintdocs para consumir los servicios: http://184.73.16.225:8080/swagger-ui/index.html
+//IMAGEN SWAGGERSTATS
+
+- Endpoint de base de datos donde se puede consultar los registros guardados de las cadenas procesadas: http://184.73.16.225:8080/h2-console/login.jsp?jsessionid=8ec3791a8876f5fb41b211d215c35f3f
+
+Usar las siguientes credenciales:
+- **JDBC URL:** jdbc:h2:mem:magnetoTeamDb
+- **User Name:** daecheve
+- **Password:** turtoise
+
+//IMAGEN H2LOGIN
+//IMAGEN H2SELECT
 
 # Stack Tecnologico Solución
 - OpenJDK 18
@@ -69,7 +88,7 @@ Finalizada la compilación, se debe ingresar a la carpeta **/MagnetoTeam/target*
 //IMAGEN SPRING CORRIENDO
 
 # Documentación Servicios
-En el siguiente endpoint //LINK SWAGGER se puede visualizar la documentación de todos los servios web disponibles, sus métodos, parametros de entrada, ejemplos de objetos de respuesta, entre otros.
+En el siguiente endpoint http://184.73.16.225:8080/swagger-ui/index.html se puede visualizar la documentación de todos los servios web disponibles, sus métodos, parametros de entrada, ejemplos de objetos de respuesta, entre otros.
 
 //IMAGEN SWAGGER GENERAL
 
