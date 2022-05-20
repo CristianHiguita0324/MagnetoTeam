@@ -69,6 +69,12 @@ Usar las siguientes credenciales:
 - Docker (Para Despliegue en AWS)
 - AWS Elastic Container Service (Alojamiento En Nube)
 
+Se usa Arquitectura Limpia para construir la aplicación, con el objetivo de desacoplar los componentes, y que la logica de negocio no dependa del framework y del motor de la base de datos, por lo tanto se puede evidenciar 3 capas.
+
+- **Infraestructure:** Capa donde se hacen las configuraciones iniciales del aplicativo, utilizando funciones propias de Spring, configuración del motor de persistencia JPA y entidades de base de datos.
+- **Adapter:** Capa intermedia que sirve como puente entre la infraestructura y el core de negocio, se usa para realizar las traducciones necesarias; Capa no dependiente del framework
+- **Core:** Capa raiz del aplicativo, donde se encuentra toda la logica de negocio, y su interaccion con las capas superiores se hacen por medio de interfaces; Capa no dependiente del framework
+
 # Configuración y Ejecución
 Se debe contar con una intalacion de la version 18 de OpenJDK o JAVA; Posterior a eso se debe clonar el proyecto de la rama main https://github.com/daecheve90/MagnetoTeam.git; Se debe ingresar a la raiz del proyecto y abrir una terminal.
 //IMAGEN RAIZ
@@ -92,3 +98,7 @@ Cuando se compila y construye el proyecto, las pruebas unitarias se ejecutan aut
 
 ![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/jacoco.png)
 ![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/jacoco_report.png)
+
+# Consideraciones Adicionales
+- El API se encuentra expuesta, y cualquiera puede hacerle peticiones y obtener respuestas; En otras condiciones se podria implementar un servicio de autenticación y seguridad utilizando alguna herramienta como JWT, creando un servicio de login que devuelva un token que serviria de autenticacion para ser incluido en los Headers de la aplicación.
+- En ambientes productivos, se podria monitorear el estado de carga de los servidores que contienen el Aplicativo, y llegado a superar cierto umbral, se podria empezar a negar peticiones con codigo HTTP 429, para asi evitar que el sevicio caiga, o hacer un ajuste a los servidores para obtener mas recursos, y asi cubrir la demanda.
