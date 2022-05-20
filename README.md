@@ -37,7 +37,8 @@ Desarrolla el algoritmo de la manera más eficiente posible.
 ]'**
 
 - Adicional se puede usar la documentación de Sprintdocs para consumir los servicios: http://184.73.16.225:8080/swagger-ui/index.html
-//IMAGEN SWAGGERMUTANT
+
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/mutant_swagger.png)
 
 ---
 
@@ -52,7 +53,8 @@ Desarrolla el algoritmo de la manera más eficiente posible.
   -H 'accept: application/json'**
 
 - Adicional se puede usar la documentación de Sprintdocs para consumir los servicios: http://184.73.16.225:8080/swagger-ui/index.html
-//IMAGEN SWAGGERSTATS
+
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/stats_swagger.png)
 
 - Endpoint de base de datos donde se puede consultar los registros guardados de las cadenas procesadas: http://184.73.16.225:8080/h2-console/login.jsp?jsessionid=8ec3791a8876f5fb41b211d215c35f3f
 
