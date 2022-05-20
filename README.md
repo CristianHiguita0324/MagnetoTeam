@@ -10,7 +10,7 @@ boolean isMutant(String[] dna); // Ejemplo Java
 
 En donde recibirás como parámetro un array de Strings que representan cada fila de una tabla de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden ser: **(A,T,C,G)**, las cuales representa cada base nitrogenada del ADN.
 
-//IMAGEN DNA
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/dna.png)
 
 Sabrás si un humano es mutante, si encuentras más de una secuencia de cuatro letras iguales, de forma oblicua, horizontal o vertical.
 
@@ -61,8 +61,9 @@ Usar las siguientes credenciales:
 - **User Name:** daecheve
 - **Password:** turtoise
 
-//IMAGEN H2LOGIN
-//IMAGEN H2SELECT
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/h2_login.png)
+
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/h2.png)
 
 # Stack Tecnologico Solución
 - OpenJDK 18
@@ -81,18 +82,19 @@ Y ejecutar el siguiente comando, para construir el .jar ejecutable y generar el 
 - En LINUX: JAVA_HOME=/usr/lib/jvm/default /usr/lib/netbeans/java/maven/bin/mvn clean install
 - En WINDOWS: COMANDO WINDOWS
 
-//IMAGEN COMPILACION
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/compilation_root.png)
 
 Finalizada la compilación, se debe ingresar a la carpeta **/MagnetoTeam/target** dentro de esta, se encuenta el archivo **MagnetoTeam-1.0.jar** abrir una consola y correr el proyecto con el comando **java -jar MagnetoTeam-1.0.jar** se iniciara el proyecto, y evidenciara en la terminal que se encuentra corriendo.
 
-//IMAGEN SPRING CORRIENDO
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/spring_run.png)
 
 # Documentación Servicios
 En el siguiente endpoint http://184.73.16.225:8080/swagger-ui/index.html se puede visualizar la documentación de todos los servios web disponibles, sus métodos, parametros de entrada, ejemplos de objetos de respuesta, entre otros.
 
-//IMAGEN SWAGGER GENERAL
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/swagger.png)
 
 # Cobertura Pruebas Unitarias
 Cuando se compila y construye el proyecto, las pruebas unitarias se ejecutan automaticamente, generando una carpeta donde queda el reporte total; La ruta es la siguiente **MagnetoTeam/target/site/jacoco/index.html**
-//IMAGEN RUTA JACOCO
-//IMAGEN REPORTE
+
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/jacoco.png)
+![image](https://github.com/daecheve90/MagnetoTeam/blob/develop/Docs/jacoco_report.png)
