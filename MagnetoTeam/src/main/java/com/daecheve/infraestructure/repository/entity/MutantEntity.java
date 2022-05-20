@@ -6,11 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.Setter;
 
 /**
  *
  * @author daecheve
  */
+@Setter
 @Table(name = "mutant")
 @Entity
 public class MutantEntity implements Serializable {

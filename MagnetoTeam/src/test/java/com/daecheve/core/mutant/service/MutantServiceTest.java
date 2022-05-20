@@ -73,7 +73,8 @@ public class MutantServiceTest {
 
     @Test
     void shouldCountByIsMutant() {
-        when(mutantPort.countByIsMutant(ArgumentMatchers.anyByte())).thenReturn((long) 15);
+        when(mutantPort.countByIsMutant(ArgumentMatchers.anyByte()))
+                .thenReturn((long) 15);
 
         long res = MutantService.countByIsMutant(Byte.parseByte("1"));
 

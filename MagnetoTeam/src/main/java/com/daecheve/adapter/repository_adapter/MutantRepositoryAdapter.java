@@ -20,7 +20,8 @@ public class MutantRepositoryAdapter implements MutantPort {
 
     @Override
     public Mutant save(Mutant mutant) {
-        return ModelMapperUtility.map(mutantRepository.save(ModelMapperUtility.map(mutant, MutantEntity.class)), Mutant.class);
+        return ModelMapperUtility.map(mutantRepository.save
+        (ModelMapperUtility.map(mutant, MutantEntity.class)), Mutant.class);
     }
 
     @Override

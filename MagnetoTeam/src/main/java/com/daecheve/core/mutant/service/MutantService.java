@@ -94,7 +94,8 @@ public class MutantService {
         return answer;
     }
 
-    private boolean compareSequence(char char1, char char2, char char3, char char4) {
+    private boolean compareSequence(char char1, char char2, 
+            char char3, char char4) {
         return char1 == char2 && char2 == char3 && char3 == char4;
     }
 

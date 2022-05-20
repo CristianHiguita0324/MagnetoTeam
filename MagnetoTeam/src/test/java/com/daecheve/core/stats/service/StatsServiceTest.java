@@ -29,7 +29,8 @@ public class StatsServiceTest {
 
     @Test
     void shouldGetStats() {
-        when(mutantService.countByIsMutant(ArgumentMatchers.anyByte())).thenReturn((long) 15);
+        when(mutantService.countByIsMutant(ArgumentMatchers.anyByte()))
+                .thenReturn((long) 15);
 
         Stats res = statsService.getStats();
 
@@ -38,7 +39,8 @@ public class StatsServiceTest {
 
     @Test
     void shouldGetStatsZero() {
-        when(mutantService.countByIsMutant(ArgumentMatchers.anyByte())).thenReturn((long) 0);
+        when(mutantService.countByIsMutant(ArgumentMatchers.anyByte()))
+                .thenReturn((long) 0);
 
         Stats res = statsService.getStats();
 
