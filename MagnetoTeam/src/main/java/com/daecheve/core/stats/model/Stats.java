@@ -7,8 +7,8 @@ import lombok.Setter;
  *
  * @author daecheve
  */
-@Setter
 @Getter
+@Setter
 public class Stats {
 
     private long countMutantDna;

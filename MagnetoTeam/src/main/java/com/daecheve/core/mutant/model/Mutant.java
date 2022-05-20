@@ -1,11 +1,13 @@
 package com.daecheve.core.mutant.model;
 
+import lombok.Getter;
 import lombok.Setter;
 
 /**
  *
  * @author daecheve
  */
+@Getter
 @Setter
 public class Mutant {
 
