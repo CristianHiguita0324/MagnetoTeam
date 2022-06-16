@@ -72,7 +72,11 @@ Usar las siguientes credenciales:
 Se usa Arquitectura Limpia para construir la aplicación, con el objetivo de desacoplar los componentes, y que la lógica de negocio no dependa del framework y del motor de la base de datos, por lo tanto se puede evidenciar 3 capas.
 
 - **Infraestructure:** Capa donde se hacen las configuraciones iniciales del aplicativo, utilizando funciones propias de Spring, configuración del motor de persistencia JPA y entidades de base de datos.
-- **Adapter:** Capa intermedia que sirve como puente entre la infraestructura y el core de negocio, se usa para realizar las traducciones necesarias; Capa no dependiente del framework - **Core:** Capa raíz del aplicativo, donde se encuentra toda la lógica de negocio, y su interacción con las capas superiores se hacen por medio de interfaces; Capa no dependiente del framework  # Configuración y Ejecución Se debe contar con una instalación de la versión 18 de OpenJDK o JDK; Posterior a eso se debe clonar el proyecto de la rama main https://github.com/daecheve90/MagnetoTeam.git; Se debe ingresar a la raíz del proyecto y abrir una terminal.
+- **Adapter:** Capa intermedia que sirve como puente entre la infraestructura y el core de negocio, se usa para realizar las traducciones necesarias; Capa no dependiente del framework 
+- **Core:** Capa raíz del aplicativo, donde se encuentra toda la lógica de negocio, y su interacción con las capas superiores se hacen por medio de interfaces; Capa no dependiente del framework  
+ 
+# Configuración y Ejecución 
+Se debe contar con una instalación de la versión 18 de OpenJDK o JDK; Posterior a eso se debe clonar el proyecto de la rama main https://github.com/daecheve90/MagnetoTeam.git; Se debe ingresar a la raíz del proyecto y abrir una terminal.
 
 Y ejecutar el siguiente comando, para construir el .jar ejecutable y generar el reporte de pruebas unitarias.
 - En LINUX: JAVA_HOME=/usr/lib/jvm/default ../Maven/bin/mvn clean install
